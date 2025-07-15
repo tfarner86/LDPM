@@ -50,7 +50,10 @@ public abstract class Monster {
     public abstract void setDefensePoints();
 
     // Set defensePoints with a specific value
-    public abstract void setDefensePoints(int value);
+    public void setDefensePoints(int value) {
+        this.defensePoints = value;
+    }
+
 
     // === Core Battle Method ===
     // Handles attack logic against another monster
@@ -142,16 +145,16 @@ public abstract class Monster {
         for (ElementalType attacker : elements) {
             switch (attacker) {
                 case ELECTRIC:
-                    modifier = (defending == WATER) ? 2.0 : (defending == GRASS || defending == ELECTRIC) ? 0.5 : 1.0;
+                    modifier = (defending == ElementalType.WATER) ? 2.0 : (defending == ElementalType.GRASS || defending == ElementalType.ELECTRIC) ? 0.5 : 1.0;
                     break;
                 case FIRE:
-                    modifier = (defending == GRASS) ? 2.0 : (defending == FIRE) ? 0.5 : (defending == WATER) ? 0.5 : 1.0;
+                    modifier = (defending == ElementalType.GRASS) ? 2.0 : (defending == ElementalType.FIRE) ? 0.5 : (defending == ElementalType.WATER) ? 0.5 : 1.0;
                     break;
                 case GRASS:
-                    modifier = (defending == WATER) ? 2.0 : (defending == GRASS || defending == FIRE) ? 0.5 : 1.0;
+                    modifier = (defending == ElementalType.WATER) ? 2.0 : (defending == ElementalType.GRASS || defending == ElementalType.FIRE) ? 0.5 : 1.0;
                     break;
                 case WATER:
-                    modifier = (defending == FIRE) ? 2.0 : (defending == WATER || defending == GRASS) ? 0.5 : 1.0;
+                    modifier = (defending == ElementalType.FIRE) ? 2.0 : (defending == ElementalType.WATER || defending == ElementalType.GRASS) ? 0.5 : 1.0;
                     break;
             }
         }
@@ -232,11 +235,8 @@ public abstract class Monster {
     public void setAttackMax(int val) { attackMax = val; }
     public void setAttackMin(int val) { attackMin = val; }
     public void setAttackPoints(int val) { attackPoints = val; }
-    public void setAttackPoints() { setAttackPoints(); } // Abstract call placeholder
     public void setDefenseMax(int val) { defenseMax = val; }
     public void setDefenseMin(int val) { defenseMin = val; }
-    public void setDefensePoints(int val) { defensePoints = val; }
-    public void setDefensePoints() { setDefensePoints(); } // Abstract call placeholder
     public void setFainted(boolean val) { fainted = val; }
     public void setHealthPoints(Double val) { healthPoints = val; }
     public void setPhrase(String val) { phrase = val; }

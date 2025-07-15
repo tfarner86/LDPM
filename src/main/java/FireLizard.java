@@ -44,16 +44,13 @@ public class FireLizard extends Monster {
     @Override
     public void setDefensePoints() {
         int roll = Dice.roll(DEFENSE_MIN, DEFENSE_MAX);
-        setDefensePoints(roll);
+        super.setDefensePoints(roll);
     }
 
-    /**
-     * Sets defensePoints explicitly to a given value
-     * @param value stat value to assign
-     */
     @Override
     public void setDefensePoints(int value) {
-        setDefensePoints(value);
+        super.setDefensePoints(value);
     }
+
 }
 

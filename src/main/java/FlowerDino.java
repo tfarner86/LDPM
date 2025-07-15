@@ -46,16 +46,13 @@ public class FlowerDino extends Monster {
     @Override
     public void setDefensePoints() {
         int roll = Dice.roll(DEFENSE_MIN, DEFENSE_MAX);
-        setDefensePoints(roll);
+        super.setDefensePoints(roll);
     }
 
-    /**
-     * Sets defensePoints directly to a specified value
-     * @param value defense stat to assign
-     */
     @Override
     public void setDefensePoints(int value) {
-        setDefensePoints(value);
+        super.setDefensePoints(value);
     }
+
 }
 

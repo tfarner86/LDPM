@@ -44,16 +44,13 @@ public class WeirdTurtle extends Monster {
     @Override
     public void setDefensePoints() {
         int roll = Dice.roll(DEFENSE_MIN, DEFENSE_MAX);
-        setDefensePoints(roll);
+        super.setDefensePoints(roll);
     }
 
-    /**
-     * Sets defensePoints to a specific value
-     * @param value the defense stat to assign
-     */
     @Override
     public void setDefensePoints(int value) {
-        setDefensePoints(value);
+        super.setDefensePoints(value);
     }
+
 }
 
